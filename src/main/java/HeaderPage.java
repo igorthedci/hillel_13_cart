@@ -29,4 +29,18 @@ public class HeaderPage {
     @FindBy(xpath = "//a[@class='login']")    // Sign In
     private WebElement titleSignIn;
 
+    /**
+     * METHODS
+     */
+    public String getShopPhone() {
+        return titleShopPhone.getText();
+    }
+    public HeaderPage clickContactUs() {
+        titleContactUs.click();
+        return this;
+    }
+    public HeaderPage clickSignIn() {
+        titleSignIn.click();
+        return this;
+    }
 }
