@@ -35,10 +35,12 @@ public class HeaderPage {
     public String getShopPhone() {
         return titleShopPhone.getText();
     }
+
     public HeaderPage clickContactUs() {
         titleContactUs.click();
         return this;
     }
+
     public HeaderPage clickSignIn() {
         titleSignIn.click();
         return this;
