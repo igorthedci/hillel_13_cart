@@ -10,11 +10,15 @@ public class ShoppingCart {
         this.driver = driver;
     }
 
+    // header of Shopping Cart
     @FindBy(xpath = "//hi")
     private WebElement titlePage;
     @FindBy(xpath = "//span[@class='heading-counter']")
     private WebElement counterProduct;
+    @FindBy(xpath = "//p[contains(@class,'alert')]")
+    private WebElement alertCart;
 
+    // row of product table
     @FindBy(xpath = "//tr[contains(@id,'product')]")
     private WebElement productRow;
     @FindBy(xpath = "//a[contains(@class,'cart_quantity_up')]")
@@ -24,6 +28,7 @@ public class ShoppingCart {
     @FindBy(xpath = "//a[@title='Delete']")
     private WebElement buttonDelete;
 
+    // footer of product table
     @FindBy(xpath = "//td[@id='total_product']")
     private WebElement totalProductsValue;
     @FindBy(xpath = "//td[@id='total_shipping']")
@@ -41,6 +46,9 @@ public class ShoppingCart {
     }
     public String getCounterProduct() {
         return counterProduct.getText();
+    }
+    public boolean isAlertCart() {
+        return alertCart.isDisplayed();
     }
 
     public ShoppingCart increaseQuantity() {
